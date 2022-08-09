@@ -1,11 +1,14 @@
 
 
 function makeCanvas(squares = 50){
+    let sliderValueDefault = document.querySelector(".sliderValue")
+    sliderValueDefault.innerHTML = `Grid size: ${squares} x ${squares}`
     let pixels = 600;
     let oneSquare = pixels/squares
-
     let canvas = document.querySelector(".canvas");
     let square = document.createElement("div");
+    
+
     for(let x=0; x <Math.floor(squares); x++){
         for(let y=0; y<Math.floor(squares); y++){
             let square = document.createElement("div");
@@ -19,7 +22,7 @@ function makeCanvas(squares = 50){
         }
     }
 }
- getSize()
+
 
 function getSize(){
     let slider = document.querySelector("#slider");
@@ -28,7 +31,7 @@ function getSize(){
     slider.addEventListener("change", function(e){
         removeCanvas()
         sliderValue = e.target.value;
-        sliderValueDisplay.innerHTML=sliderValue
+        sliderValueDisplay.innerHTML=`Grid size: ${e} x ${e}`
         makeCanvas(sliderValue)
     })
 }
@@ -38,4 +41,7 @@ function removeCanvas(){
     divs.forEach(function(oneDiv){
         oneDiv.remove()
     })
-}
+} 
+
+makeCanvas()
+getSize()
