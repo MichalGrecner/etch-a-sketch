@@ -17,8 +17,16 @@
         <div class="menu">
             <div class="slidecontainer">
                 <input type="range" min="10" max="100" value="50" id="slider">
-              </div>
-              <div class="sliderValue"></div>
+                <div class="sliderValue"></div>
+            </div>
+            <div class="colorCanvas"><label for="colorpicker">Choose canvas color:</label>
+                <input type="color" id="colorPickerCanvas" value="#0000ff">
+            </div>
+            <button id="btnUpdate">update canvas</button>
+            <div class="colorPen"><label for="colorpicker">Choose pen color:</label>
+                <input type="color" id="colorPickerPen" value="#ff0000">
+            </div>
+            
         </div>
     </main>
     <script src="script.js"></script>
